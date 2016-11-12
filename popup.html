@@ -1,0 +1,92 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+
+<head>
+	<title>Stackoverflow Extension's Popup</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<style>
+		body {
+			font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+			font-size: 14px;
+			min-width: 172px;
+			color: #999999;
+		}
+		
+		#status {
+			float: left
+			/* avoid an excessively wide status text */
+			white-space: pre;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			max-width: 300px;
+		}
+		
+		.is-answered,
+		.create-time,
+		.view-count,
+		.answer-count {
+			font-size: 12px;
+		}
+		
+		.is-answered,
+		.answer-count {
+			color: #F5A623;
+		}
+		
+		.view-count {
+			color: #999999;
+		}
+		
+		.count {
+			color: #DDDDDD
+		}
+		
+		#result {
+			width: 300px;
+		}
+		
+		a {
+			color: #009a61;
+			text-decoration: none;
+		}
+		
+		button {
+			color: #fff;
+			background-color: #009a61;
+			border: 1px solid #008151;
+			border-radius: 2px;
+		}
+		
+		#input {
+			width: 120px;
+			height: 20px;
+			border: 1px solid #ccc;
+			border-radius: 2px;
+			outline: none;
+		}
+	</style>
+
+	<!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+	<script src="moment.min.js"></script>
+	<script src="popup.js"></script>
+</head>
+
+<body>
+	<input id="input"></input>
+	<button id="btn">搜索</button>
+	<div id="status"></div>
+	<div id="order"></div>
+	<div id="result" hidden></div>
+</body>
+
+</html>
